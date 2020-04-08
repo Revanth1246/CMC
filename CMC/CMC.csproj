@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\NUnit3TestAdapter.3.16.1\build\net35\NUnit3TestAdapter.props" Condition="Exists('..\packages\NUnit3TestAdapter.3.16.1\build\net35\NUnit3TestAdapter.props')" />
+  <Import Project="..\packages\NUnit.3.12.0\build\NUnit.props" Condition="Exists('..\packages\NUnit.3.12.0\build\NUnit.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{43CBE920-497A-471A-8E41-D36B8BFF7D0D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CMC</RootNamespace>
+    <AssemblyName>CMC</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="nunit.framework, Version=3.12.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.3.12.0\lib\net45\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="RelevantCodes.ExtentReports, Version=1.4.9.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExtentReports.2.41.0\lib\RelevantCodes.ExtentReports.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WebDriver, Version=3.12.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selenium.WebDriver.3.12.1\lib\net45\WebDriver.dll</HintPath>
+    </Reference>
+    <Reference Include="WebDriver.Support, Version=3.12.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selenium.Support.3.12.1\lib\net45\WebDriver.Support.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Class_Modules\GumTree_Search.cs" />
+    <Compile Include="Class_Modules\Results_Count.cs" />
+    <Compile Include="GumTree.cs" />
+    <Compile Include="Page_Objects\EnterSearchTextObjects.cs" />
+    <Compile Include="Page_Objects\ResultsPageObjects.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utility_Scripts\Shared_Functions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Configuration_File\App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="TestResults\CMC_Automation_TestResult\CMC_Automation_TestResult_09042020000755\TestResults.html" />
+    <Content Include="TestResults\CMC_Automation_TestResult\CMC_Automation_TestResult_09042020001228\TestResults.html" />
+    <Content Include="TestResults\CMC_Automation_TestResult\CMC_Automation_TestResult_09042020004038\Ad Images1_20200409004408.png" />
+    <Content Include="TestResults\CMC_Automation_TestResult\CMC_Automation_TestResult_09042020004038\AdNUmber_20200409004350.png" />
+    <Content Include="TestResults\CMC_Automation_TestResult\CMC_Automation_TestResult_09042020004038\Ad_Images_20200409004401.png" />
+    <Content Include="TestResults\CMC_Automation_TestResult\CMC_Automation_TestResult_09042020004038\Final_Image_20200409004558.png" />
+    <Content Include="TestResults\CMC_Automation_TestResult\CMC_Automation_TestResult_09042020004038\GumTree_Search_Results_20200409004225.png" />
+    <Content Include="TestResults\CMC_Automation_TestResult\CMC_Automation_TestResult_09042020004038\GumTree_Search_Text_20200409004119.png" />
+    <Content Include="TestResults\CMC_Automation_TestResult\CMC_Automation_TestResult_09042020004038\TestResults.html" />
+    <Content Include="TestResults\CMC_Automation_TestResult\CMC_Automation_TestResult_09042020010148\Ad Images1_20200409010513.png" />
+    <Content Include="TestResults\CMC_Automation_TestResult\CMC_Automation_TestResult_09042020010148\AdNUmber_20200409010455.png" />
+    <Content Include="TestResults\CMC_Automation_TestResult\CMC_Automation_TestResult_09042020010148\Ad_Images_20200409010506.png" />
+    <Content Include="TestResults\CMC_Automation_TestResult\CMC_Automation_TestResult_09042020010148\Final_Image_20200409010542.png" />
+    <Content Include="TestResults\CMC_Automation_TestResult\CMC_Automation_TestResult_09042020010148\GumTree_Search_Results_20200409010331.png" />
+    <Content Include="TestResults\CMC_Automation_TestResult\CMC_Automation_TestResult_09042020010148\GumTree_Search_Text_20200409010223.png" />
+    <Content Include="TestResults\CMC_Automation_TestResult\CMC_Automation_TestResult_09042020010148\TestResults.html" />
+    <Content Include="TestResults\CMC_Automation_TestResult\CMC_Automation_TestResult_09042020011450\GumTree_Error_20200409011517.png" />
+    <Content Include="TestResults\CMC_Automation_TestResult\CMC_Automation_TestResult_09042020011450\GumTree_Search_Text_20200409011516.png" />
+    <Content Include="TestResults\CMC_Automation_TestResult\CMC_Automation_TestResult_09042020011450\TestResults.html" />
+    <Content Include="TestResults\CMC_Automation_TestResult\CMC_Automation_TestResult_09042020011944\GumTree_Error_20200409012022.png" />
+    <Content Include="TestResults\CMC_Automation_TestResult\CMC_Automation_TestResult_09042020011944\GumTree_Search_Text_20200409012022.png" />
+    <Content Include="TestResults\CMC_Automation_TestResult\CMC_Automation_TestResult_09042020011944\TestResults.html" />
+    <Content Include="TestResults\CMC_Automation_TestResult\CMC_Automation_TestResult_09042020012252\GumTree_Error_20200409012456.png" />
+    <Content Include="TestResults\CMC_Automation_TestResult\CMC_Automation_TestResult_09042020012252\GumTree_Search_Text_20200409012455.png" />
+    <Content Include="TestResults\CMC_Automation_TestResult\CMC_Automation_TestResult_09042020012252\TestResults.html" />
+    <Content Include="TestResults\CMC_Automation_TestResult\CMC_Automation_TestResult_09042020012906\GumTree_Error_20200409013014.png" />
+    <Content Include="TestResults\CMC_Automation_TestResult\CMC_Automation_TestResult_09042020012906\TestResults.html" />
+    <Content Include="TestResults\CMC_Automation_TestResult\CMC_Automation_TestResult_09042020013101\GumTree_Error_20200409013241.png" />
+    <Content Include="TestResults\CMC_Automation_TestResult\CMC_Automation_TestResult_09042020013101\TestResults.html" />
+    <Content Include="TestResults\CMC_Automation_TestResult\CMC_Automation_TestResult_09042020013338\Ad Images1_20200409014235.png" />
+    <Content Include="TestResults\CMC_Automation_TestResult\CMC_Automation_TestResult_09042020013338\AdNUmber_20200409014218.png" />
+    <Content Include="TestResults\CMC_Automation_TestResult\CMC_Automation_TestResult_09042020013338\Ad_Images_20200409014227.png" />
+    <Content Include="TestResults\CMC_Automation_TestResult\CMC_Automation_TestResult_09042020013338\Final_Image_20200409014450.png" />
+    <Content Include="TestResults\CMC_Automation_TestResult\CMC_Automation_TestResult_09042020013338\GumTree_Search_Results_20200409013957.png" />
+    <Content Include="TestResults\CMC_Automation_TestResult\CMC_Automation_TestResult_09042020013338\GumTree_Search_Text_20200409013858.png" />
+    <Content Include="TestResults\CMC_Automation_TestResult\CMC_Automation_TestResult_09042020013338\TestResults.html" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Selenium.WebDriver.ChromeDriver.80.0.3987.10600\build\Selenium.WebDriver.ChromeDriver.targets" Condition="Exists('..\packages\Selenium.WebDriver.ChromeDriver.80.0.3987.10600\build\Selenium.WebDriver.ChromeDriver.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Selenium.WebDriver.ChromeDriver.80.0.3987.10600\build\Selenium.WebDriver.ChromeDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Selenium.WebDriver.ChromeDriver.80.0.3987.10600\build\Selenium.WebDriver.ChromeDriver.targets'))" />
+    <Error Condition="!Exists('..\packages\NUnit.3.12.0\build\NUnit.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit.3.12.0\build\NUnit.props'))" />
+    <Error Condition="!Exists('..\packages\NUnit3TestAdapter.3.16.1\build\net35\NUnit3TestAdapter.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit3TestAdapter.3.16.1\build\net35\NUnit3TestAdapter.props'))" />
+    <Error Condition="!Exists('..\packages\Selenium.WebDriver.IEDriver.3.150.1\build\Selenium.WebDriver.IEDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Selenium.WebDriver.IEDriver.3.150.1\build\Selenium.WebDriver.IEDriver.targets'))" />
+  </Target>
+  <Import Project="..\packages\Selenium.WebDriver.IEDriver.3.150.1\build\Selenium.WebDriver.IEDriver.targets" Condition="Exists('..\packages\Selenium.WebDriver.IEDriver.3.150.1\build\Selenium.WebDriver.IEDriver.targets')" />
+</Project>
