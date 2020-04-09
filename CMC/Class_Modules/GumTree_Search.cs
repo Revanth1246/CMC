@@ -8,11 +8,9 @@ using CMC.Utility_Scripts;
 using OpenQA.Selenium.Support.UI;
 using OpenQA.Selenium;
 using System.Threading;
-using RelevantCodes.ExtentReports;
+using RelevantCodes.ExtentReports; 
 using NUnit.Framework;
-using CMC.Class_Modules;
-using CMC.Page_Objects;
-using OpenQA.Selenium.Interactions;
+
 
 namespace CMC.Class_Modules
 {
@@ -40,9 +38,11 @@ namespace CMC.Class_Modules
                
             ResultsPageObjects resultspage = new ResultsPageObjects();
             WaitForElement(resultspage.Results_Count);     
-            var Resutls_Count = GetText(resultspage.Results_Count);
-            TestContext.Progress.WriteLine("Resutls_Count is "+ Resutls_Count);
-            extentTest.Log(LogStatus.Pass, "Number of Search Results displayed is " + Resutls_Count);
+            var Resutls_Count = GetText(resultspage.Results_Count);           
+            string[] Split_Results_Cont = Resutls_Count.Split(' ');
+            var Total_Results_count = Split_Results_Cont[0];
+            TestContext.Progress.WriteLine("Resutls_Count is " + Total_Results_count);
+            extentTest.Log(LogStatus.Pass, "Number of Search Results displayed is " + Total_Results_count);
             ScrollToBottom();
             Thread.Sleep(3000);
             var Results_page_count = resultspage.Search_Results_page.Count;
@@ -51,8 +51,16 @@ namespace CMC.Class_Modules
             SelectDropdown(resultspage.Search_Results_page[Results_page_count - 1], "96 results per page");
             extentTest.Log(LogStatus.Pass, "Search Resuls with Text :96 results per page selected successfully");
             WaitForElement(resultspage.Search_Results_page[Results_page_count - 1]);
-            var count1 = resultspage.Results_Count_per_page[1].FindElements(By.XPath("a")).Count;
+            int count1 = resultspage.Results_Count_per_page[1].FindElements(By.XPath("a")).Count;
             TestContext.Progress.WriteLine("Results_Count_per_page is "+ count1);
+            if(count1==96)
+            {
+                extentTest.Log(LogStatus.Pass, "The Total number of Ads displayed under Category:Most Recent is " + count1);
+            }
+            else
+            {
+                extentTest.Log(LogStatus.Fail, "The Total number of Ads displayed under Category:Most Recent is  " + count1 + " which is not matched as selected with 96 ads");
+            }
             Capture_Screenshot("GumTree_Search_Results", "Pass", "GumTree Search Results");
         }
 

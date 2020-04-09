@@ -60,7 +60,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class_Modules\GumTree_Search.cs" />
-    <Compile Include="Class_Modules\Results_Count.cs" />
     <Compile Include="GumTree.cs" />
     <Compile Include="Page_Objects\EnterSearchTextObjects.cs" />
     <Compile Include="Page_Objects\ResultsPageObjects.cs" />
